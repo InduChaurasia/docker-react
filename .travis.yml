@@ -2,9 +2,8 @@ sudo: required
 services:
  - docker
 
-before-install:
+before_install:
  - docker build -t indu17/docker-react -f Dockerfile.dev .
- - docker push indu17/docker-react
  
 script:
  - docker run -e CI=true indu17/docker-react npm run test -- --coverage
